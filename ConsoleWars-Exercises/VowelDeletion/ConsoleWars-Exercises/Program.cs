@@ -18,6 +18,7 @@ namespace ConsoleWars_Exercises
 
             foreach (string a in charsToRemove)
             {
+                //string.Empty: The value of this field is the zero-length string, ""
                 noVowelsUserInputText = noVowelsUserInputText.Replace(a, string.Empty);
             }
             return noVowelsUserInputText;
