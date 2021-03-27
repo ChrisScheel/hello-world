@@ -14,6 +14,7 @@ namespace PangramCheck
             Console.WriteLine(IsPangram(userString));
         }
 
+        //TODO: Is IndexOf() really the best solution for this exercies? No better way?
         public static bool IsPangram(string str)
         {
             str = str.ToLower();
