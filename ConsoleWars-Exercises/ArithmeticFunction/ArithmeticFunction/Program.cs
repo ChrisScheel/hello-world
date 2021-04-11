@@ -28,7 +28,7 @@ namespace ArithmeticFunction
                 case "divide":
                     return a / b;
                 default:
-                    return 0;
+                    throw new Exception("Invalid operation. Maybe a typo?");
             }
         }
     }
