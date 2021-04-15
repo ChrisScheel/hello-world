@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace FilterStringsOutOfList
 {
+    //TODO: Rename project because it filters everything which is not an INT32 - not only strings!
     class Program
     {
         static void Main(string[] args)
@@ -20,7 +21,7 @@ namespace FilterStringsOutOfList
                 Console.WriteLine(a);
             }
         }
-        //returns only Integer values. No doubles and so on
+        //Returns only Integer values. No doubles and so on
         public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
         {
             List<Int32> IntList = new List<Int32>();
