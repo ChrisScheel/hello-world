@@ -10,7 +10,7 @@ namespace PrintStringAndPosition
             List<string> MyList = new List<string>();
             MyList.Add("a");
             MyList.Add("b");
-            MyList.Add("c"); //TODO: if a string appears several times it will always print out the same position -> 3 in this case. do it again!
+            MyList.Add("c");
             MyList.Add("c");
             MyList.Add("c");
 
@@ -23,14 +23,21 @@ namespace PrintStringAndPosition
 
         public static List<string> Number(List<string> lines)
         {
-            List<string> OutPutList = new List<string>();
-
-            foreach(string a in lines)
+            for (int i = 0; i < lines.Count; i++)
             {
-                //"+1+" was added to indexof() to print out position 1 and not 0, what could confuse the user
+                lines[i] = (i + 1) + ": " + lines[i];
+            }
+            return lines;
+
+            /* Old code doesn't work properly. For example: If the list contains two or more of the same string, it won't print out the right position
+             * of the element. With the example values above: "c" will always come with the position 3, not followed by 4 and 5 as expected.
+             * 
+             * foreach(string a in lines)
+            {
                 OutPutList.Add(Convert.ToString(lines.IndexOf(a) + 1) + ": " + a);
             }
             return OutPutList;
+            */
         }
     }
 }
