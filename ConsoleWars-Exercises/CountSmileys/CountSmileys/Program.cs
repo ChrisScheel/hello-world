@@ -17,6 +17,12 @@ namespace CountSmileys
 
             foreach (string smiley in smileys)
             {
+                /* Or more compact solution from codewars:
+                 *         if(((smiley.Contains(':') || smiley.Contains(';'))) && ((smiley.Contains(')') || smiley.Contains('D'))) && !smiley.Contains(' '))
+                count++;
+
+                Or use regular expression what i didn't learn.
+                */
                 switch (smiley)
                 {
                     case ":-)":
