@@ -16,19 +16,23 @@ namespace CamelCaseBreak
         public static string BreakCamelCase(string str)
         {
             char[] charArray = str.ToCharArray();
+            /*Refactor it:
+             * It only works for Strings with one single upper case character
+             * Code looks a bit nasty
+             */
+            foreach(char c in charArray)
 
-            foreach(char a in charArray)
-                if (Char.IsUpper(a))
+                if (Char.IsUpper(c))
                 {
-                    int index = -1;
+                    int index = 0;
 
-                    foreach(char c in charArray)
+                    foreach(char a in charArray)
                     {
-                        index++;
-                        if (char.IsUpper(c))
+                        if (char.IsUpper(a))
                         {
                             break;
                         }
+                        index++;
                     }
 
                     StringBuilder stringBuilder = new StringBuilder();
