@@ -46,6 +46,15 @@ namespace TortoiseRun
             }
 
             return speedInHoursMinutesSeconds;
+
+            /* Very nice Codewars solution:
+             *     return v1 > v2 ? null : new int[] 
+                {
+                (int) TimeSpan.FromHours((double)g / (v2 - v1)).TotalHours,
+                (int) TimeSpan.FromHours((double)g / (v2 - v1)).TotalMinutes - (int) TimeSpan.FromHours((double)g / (v2 - v1)).TotalHours * 60,
+                (int) TimeSpan.FromHours((double)g / (v2 - v1)).TotalSeconds - (int) TimeSpan.FromHours((double)g / (v2 - v1)).TotalMinutes * 60
+                };
+            */
         }
     }
 }
