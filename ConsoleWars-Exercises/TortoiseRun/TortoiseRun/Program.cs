@@ -33,7 +33,7 @@ namespace TortoiseRun
             }
             else
             {
-                double timeTillReachedinHours = (double)g / ((double)v2 - (double)v1);
+                double timeTillReachedinHours = (double)g / (v2 - v1);
 
                 var timeSpan = TimeSpan.FromHours(timeTillReachedinHours);
                 int hh = timeSpan.Hours;
