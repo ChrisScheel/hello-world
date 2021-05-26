@@ -11,7 +11,7 @@ namespace RowWeights
 
             foreach (int n in RowWeights(peopleWeight))
             {
-                Console.WriteLine(n);
+                Console.Write("{0} ", n);
             }
         }
 
