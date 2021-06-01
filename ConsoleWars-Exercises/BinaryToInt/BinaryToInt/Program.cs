@@ -24,6 +24,18 @@ namespace BinaryToInt
             string resultBinary = binary.ToString();
             // The base of binary is 2. Therefore the the value of "Base" must be 2
             return Convert.ToInt32(resultBinary, 2);
+
+            /*Alternative solution from Codewars:
+             *       public static int binaryArrayToNumber(int[] BinaryArray)
+                    {
+                        string num = string.Empty;
+                        foreach (var item in BinaryArray)
+                        {
+                             num += item.ToString();
+                        }
+                    return Convert.ToInt32(num,2);
+                    }
+            */
         }
     }
 }
