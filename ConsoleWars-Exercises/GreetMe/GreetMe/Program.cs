@@ -15,7 +15,7 @@ namespace GreetMe
 
         public static string Greet(string name)
         {
-            //REFACTOR: Bad way with a lot of new strings. Use String Builder
+            //REFACTOR: Bad way with a lot of new strings and char variables.
             string loweredName = name.ToLower();
             char firstLetterOfName = loweredName[0];
             char firstLetterOfNameUpper = char.ToUpper(firstLetterOfName);
@@ -23,7 +23,10 @@ namespace GreetMe
             
             string greetUser = "Hello " + newName + "!";
             return greetUser;
-            
+
+            /*Alternative, shorter solution from Codewars:
+             * return $"Hello {name.ToUpper()[0] + name.ToLower().Substring(1)}!";
+            */
         }
     }
 }
