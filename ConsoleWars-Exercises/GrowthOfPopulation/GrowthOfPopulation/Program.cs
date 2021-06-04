@@ -6,10 +6,10 @@ namespace GrowthOfPopulation
     {
         static void Main(string[] args)
         {
-            int startingPopulation = 1000;
-            double growthInPercentYearly = 0.02;
-            int additionalPeopleYearly = 50;
-            int goalPopulation = 1200;
+            int startingPopulation = 1500;
+            double growthInPercentYearly = 5;
+            int additionalPeopleYearly = 100;
+            int goalPopulation = 5000;
 
             Console.WriteLine("It takes {0} years until you reach your goal population", NbYear(startingPopulation, growthInPercentYearly, additionalPeopleYearly, goalPopulation));
         }
@@ -17,20 +17,16 @@ namespace GrowthOfPopulation
         public static int NbYear(int startingPopulation, double growthInPercentYearly, int additionalPeopleYearly, int goalPopulation)
         {
             int amountOfPeopleInYear = startingPopulation;
+            double increaseByYear = growthInPercentYearly / 100;
             int years = 0;
 
             while (amountOfPeopleInYear < goalPopulation)
             {
-                amountOfPeopleInYear = CalculateAmountOfPeopleEndOfYear(amountOfPeopleInYear, growthInPercentYearly, additionalPeopleYearly);
+                double newAmountOfPeopleInYear = (amountOfPeopleInYear + (amountOfPeopleInYear * increaseByYear) + additionalPeopleYearly);
+                amountOfPeopleInYear = (int)newAmountOfPeopleInYear;
                 years++;
             }
             return years;
-
-            static int CalculateAmountOfPeopleEndOfYear (int amountOfPeopleInYear, double growthInPercentYearly, int additionalPeopleYearly)
-            {
-                double NewAmountOfPeopleEndOfYear = (double)amountOfPeopleInYear + ((double)amountOfPeopleInYear * growthInPercentYearly) + additionalPeopleYearly;
-                return (int)NewAmountOfPeopleEndOfYear;
-            }
         }
     }
 }
