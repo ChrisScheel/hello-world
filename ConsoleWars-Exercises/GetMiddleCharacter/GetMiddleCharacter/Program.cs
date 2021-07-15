@@ -17,17 +17,21 @@ namespace GetMiddleCharacter
         public static string GetMiddle(string s)
         {
             string middle = string.Empty;
+            int oddMiddleIndex = (s.Length - 1) / 2;
+            int evenMiddleIndex1 = (s.Length / 2) - 1;
+            int evenMiddleIndex2 = s.Length / 2;
 
-            if (s.Length % 2 != 0)
+            if (string.IsNullOrEmpty(s))
             {
-                char oddMiddleCharacter = s[(s.Length - 1) / 2];
-                middle = oddMiddleCharacter.ToString();
+                middle = "";
+            }
+            else if (s.Length % 2 != 0)
+            {
+                middle = s[oddMiddleIndex].ToString();
             }
             else
             {
-                char evenMiddleCharacter1 = s[(s.Length / 2) - 1];
-                char evenMiddleCharacter2 = s[s.Length / 2];
-                middle = evenMiddleCharacter1.ToString() + evenMiddleCharacter2.ToString();
+                middle = s[evenMiddleIndex1].ToString() + s[evenMiddleIndex2].ToString();
             }
             return middle;
         }
