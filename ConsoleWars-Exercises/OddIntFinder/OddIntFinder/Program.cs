@@ -21,6 +21,8 @@ namespace OddIntFinder
             //- count how many times the number appears
             //  - if even, continue with next number
             //  - if odd, return number and stopp loop
+            //
+            //think about what search algorithm is the best
             return -1;
         }
     }
